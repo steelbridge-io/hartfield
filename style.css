@@ -1,0 +1,575 @@
+/*!
+Theme Name: hartfield-financial
+Theme URI: http://underscores.me/
+Author: CJP
+Author URI: http://parsonshosting.com
+Description: A custom theme for Harfield Financial Services
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: hartfield-financial
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+hartfield-financial is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/* Navigation
+--------------------------------------------- */
+.main-navigation {
+	display: block;
+	width: 100%;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	display: block;
+	left: auto;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main
+.posts-navigation,
+.site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+	display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+}
+
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+
+/**
+New CSS
+ */
+
+/* Containers for WordPress menus in header */
+#primary-nav .menu,
+#sub-nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Primary header menu uses a 2×2 grid to match legacy layout
+   Left column: 218px  (Home 56px tall, Learn More 45px tall)
+   Right column: 224px (About Us 56px tall, Contact 45px tall) */
+#primary-nav .menu {
+    display: grid;
+    grid-template-columns: 218px 224px;
+    grid-template-rows: 56px 45px;
+    gap: 0;
+    align-items: stretch;
+    justify-items: stretch;
+}
+#primary-nav .menu > li { margin: 0; padding: 0; }
+#primary-nav .menu > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px; /* hide text; keep accessible name via nav label */
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+#primary-nav .nav-home { grid-column: 1; grid-row: 1; }
+#primary-nav .nav-learn-more { grid-column: 1; grid-row: 2; }
+#primary-nav .nav-about-us { grid-column: 2; grid-row: 1; }
+#primary-nav .nav-contact { grid-column: 2; grid-row: 2; }
+
+/* Primary header images (no explicit width/height needed due to grid sizing) */
+#primary-nav .nav-home > a { background-image: url('graphics/slices/home.png'); }
+#primary-nav .nav-home > a:hover { background-image: url('graphics/slices/home_f2.png'); }
+
+#primary-nav .nav-learn-more > a { background-image: url('graphics/slices/learn_more.png'); }
+#primary-nav .nav-learn-more > a:hover { background-image: url('graphics/slices/learn_more_f2.png'); }
+
+#primary-nav .nav-about-us > a { background-image: url('graphics/slices/about_us.png'); }
+#primary-nav .nav-about-us > a:hover { background-image: url('graphics/slices/about_us_f2.png'); }
+
+#primary-nav .nav-contact > a { background-image: url('graphics/slices/contact.png'); }
+#primary-nav .nav-contact > a:hover { background-image: url('graphics/slices/contact_f2.png'); }
+
+/* Sub navigation strip (tile buttons) */
+#sub-nav .menu {
+    display: flex; /* lay out tiles left-to-right inside the table cell */
+    align-items: stretch;
+}
+#sub-nav .menu > li { margin: 0; padding: 0; }
+#sub-nav .menu > li > a {
+    display: inline-block;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+/* Exact pixel sizes for tiles to match legacy */
+#sub-nav .nav-retirement-planning > a { width:145px; height:138px; background-image:url('graphics/slices/retirement_planning.png'); }
+#sub-nav .nav-retirement-planning > a:hover { background-image:url('graphics/slices/retirement_planning_f2.png'); }
+
+#sub-nav .nav-529-plans > a { width:139px; height:138px; background-image:url('graphics/slices/529_plans.png'); }
+#sub-nav .nav-529-plans > a:hover { background-image:url('graphics/slices/529_plans_f2.png'); }
+
+#sub-nav .nav-corporate-benefits > a { width:139px; height:138px; background-image:url('graphics/slices/corporate_benefits.png'); }
+#sub-nav .nav-corporate-benefits > a:hover { background-image:url('graphics/slices/corporate_benefits_f2.png'); }
+
+#sub-nav .nav-insurance > a { width:139px; height:138px; background-image:url('graphics/slices/Insurance.png'); }
+#sub-nav .nav-insurance > a:hover { background-image:url('graphics/slices/Insurance_f2.png'); }
+
+#sub-nav .nav-1031-exchange > a { width:147px; height:138px; background-image:url('graphics/slices/1031_exchange_v2.png'); }
+#sub-nav .nav-1031-exchange > a:hover { background-image:url('graphics/slices/1031_exchange_f2.png'); }
+
+/* Optional utility if you want visually-hidden text for SRs instead of text-indent */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+
+body {
+    background-color: #462700;
+    padding: 0;
+    margin: 0;
+}
+a[href $='.pdf'] {
+    padding-left: 22px;
+    background: transparent url(graphics/pdf.gif) no-repeat left;
+}
+a[href $='.zip'] {
+    padding-left: 22px;
+    background: transparent url(graphics/zip.gif) no-repeat left;
+}
+body {
+    background-color: #462700;
+    margin: 0px;
+    padding: 0px;
+}
+#container {
+    width: 850px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url(graphics/slices/background_main.png);
+    background-repeat: repeat-y;
+}
+#header {
+    height: 110px;
+    width: 795px;
+    background-image: url(graphics/slices/r3_c2.png);
+    background-repeat: repeat-y;
+}
+#sub_nav {
+    height: 138px;
+    width: 795px;
+}
+#main {
+    padding: 20px;
+    width: 90%;
+    margin: 0px;
+}
+#main_home {
+    width: 95%;
+    margin: 0px;
+    background-image: url(graphics/slices/background_home.png);
+    height: 480px;
+    background-repeat: no-repeat;
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+#services {
+    width: 233px;
+    float: left;
+    margin-top: 10px;
+}
+.text_form {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 10px;
+    text-align: center;
+}
+#content {
+    width: 320px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+#content_pages {
+    float: left;
+    margin-left: 31px;
+    margin-top: 0px;
+    margin-right: 75px;
+    width: 710px;
+}
+h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #00C;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+h3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 22px;
+    color: #4E2600;
+    line-height: 30px;
+}
+h4 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4E2600;
+    margin-top: 3px;
+    margin-right: 0px;
+    margin-bottom: 3px;
+    margin-left: 0px;
+    text-transform: capitalize;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+}
+h5 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+    color: #000;
+}
+.text_welcome {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #4E2600;
+    line-height: 20px;
+}
+#footer {
+    height: 30px;
+    width: 795px;
+    clear: both;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10px;
+    color: #FEEED5;
+    padding-top: 3px;
+    text-align: center;
+}
+  .AccordionPanelContent ul {
+      list-style-type: circle;
+      margin: 5px;
+      padding-top: 5px;
+      padding-right: 5px;
+      padding-bottom: 5px;
+      padding-left: 15px;
+  }
+#footer p a {
+    color: #FEEED5;
+    text-decoration: underline;
+}
+#footer p a:hover {
+    color: #FEEED5;
+    text-decoration: none;
+}
+.AccordionPanelContent ul li {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.AccordionPanelContent ul {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+#leads_form {
+    width: 230px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+#leads_form .gform-theme--foundation .gform_fields  {
+    display: initial;
+}
+#leads_form input[type="text"],
+#leads_form input[type="tel"],
+#leads_form input[type="email"] {
+    height: 26px;
+}
+#leads_form .gfield_label.gform-field-label,
+#leads_form .gform-field-label.gform-field-label--type-sub {
+    margin-bottom: 1px;
+}
+.label {
+    margin-bottom: 13px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+}
+#why_list {
+    background-color: #E7D8C0;
+    float: left;
+    width: 275px;
+    margin-left: 31px;
+    border: 1px solid #B7AA98;
+}
+.why_list-points {
+    margin: 10px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+    line-height: 18px;
+    border: 1px solid #EEE;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+.why_list-points:hover {
+    margin: 10px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000;
+    line-height: 18px;
+    background-color: #FFF;
+    border: 1px solid #ccc;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+.text_quote {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4E2600;
+    line-height: 30px;
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 15px;
+}
+#quote {
+    background-color: #E5D7C0;
+    width: 175px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    line-height: 30px;
+    color: #4E2600;
+    margin-top: 40px;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 13px;
+    margin-left: 0px;
+    border: 1px solid #B7AC9A;
+    text-align: center;
+    font-style: italic;
+}
+.text_main {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000;
+}
+.photo_border {
+    border: 1px solid #4E2600;
+    margin-bottom: 13px;
+}
+#quote_box {
+    margin-right: 11px;
+    margin-left: 11px;
+}
+#quote_right {
+    background-color: #E5D7C0;
+    width: 175px;
+    float: right;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    line-height: 30px;
+    color: #4E2600;
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 13px;
+    margin-left: 10px;
+    border: 1px solid #B7AC9A;
+    text-align: center;
+    font-style: italic;
+}
+a:link , a:visited{
+    color: #4E2600;
+    text-decoration: underline;
+}
+.info_column {
+    margin: 5px;
+    padding: 10px;
+    float: left;
+    width: 125px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #D3C5B0;
+}
+a:hover {
+    color: #773A00;
+    text-decoration: none;
+}
+.info_column_FAQ {
+    margin: 5px;
+    padding: 10px;
+    float: left;
+    width: 360px;
+}
+.privacy_policy {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+#leads_form1 {
+    float: left;
+    width: 222px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10px;
+    font-style: italic;
+    text-align: left;
+}
+
+.footer-creds {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 90%;
+    margin: 0 auto 0 0.6rem;
+}
+
+
+
+
