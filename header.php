@@ -36,30 +36,22 @@
                 <td>
                     <!-- Keep this cell to maintain legacy header width structure; can be empty -->
                 </td>
-                <td>
+                <!--<td>
                     <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/graphics/slices/top_right.png'); ?>" width="25" height="101" alt="" />
-                </td>
+                </td>-->
             </tr>
         </table>
     </div>
 
     <div id="sub_nav">
-        <table align="left" bgcolor="#402709" border="0" cellpadding="0" cellspacing="0" width="795">
-            <tr>
-                <td><img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/graphics/slices/side_left.png'); ?>" width="44" height="138" alt="" /></td>
-                <td colspan="5">
-                    <?php
-                    // Sub navigation row (Retirement Planning, 529 Plans, Corporate Benefits, Insurance, 1031 Exchange)
-                    wp_nav_menu([
-                            'theme_location' => 'subnav',
-                            'container'      => 'nav',
-                            'container_id'   => 'sub-nav',
-                            'menu_class'     => 'menu sub-menu',
-                            'fallback_cb'    => false,
-                    ]);
-                    ?>
-                </td>
-                <td><img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/graphics/slices/side_right.png'); ?>" width="42" height="138" alt="" /></td>
-            </tr>
-        </table>
+        <nav id="sub-nav" class="sub-nav" aria-label="Sub navigation">
+            <?php
+            wp_nav_menu([
+                    'theme_location' => 'subnav',
+                    'container'      => false,
+                    'menu_class'     => 'menu sub-menu',
+                    'fallback_cb'    => false,
+            ]);
+            ?>
+        </nav>
     </div>

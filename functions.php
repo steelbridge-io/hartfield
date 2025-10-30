@@ -13,6 +13,11 @@ if ( ! defined( '_S_VERSION' ) ) {
 }
 
 /**
+ * Include the menu image file.
+ */
+include_once get_template_directory() . '/inc/menu-image/menu-img.php';
+
+/**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
@@ -153,7 +158,14 @@ function hartfield_financial_scripts() {
   wp_enqueue_script('spry-accordion-home-js', get_template_directory_uri() . '/SpryAssets/SpryAccordion-home.js', array(), _S_VERSION, false);
   wp_enqueue_script('spry-tabs-js', get_template_directory_uri() . '/SpryAssets/SpryTabbedPanels.js', array(), _S_VERSION, false);
   wp_enqueue_script('spry-validation-text-field-js', get_template_directory_uri() . '/SpryAssets/SpryValidationTextField.js', array(), _S_VERSION, false);
+  wp_enqueue_script('curvy-js', get_template_directory_uri() . 'vwd_scripts/curvy/vwd_curvycorners.js', array(), _S_VERSION, false);;
   wp_enqueue_script('functions-js', get_template_directory_uri() . '/js/custom.js', array(), _S_VERSION, false);
+
+ if ( is_page( 9 ) ) {
+  wp_enqueue_script('about-us-js', get_template_directory_uri() . '/js/about_us.js', array(), _S_VERSION, true);
+ }
+
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

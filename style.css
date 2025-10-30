@@ -219,7 +219,6 @@ New CSS
 #sub-nav .menu > li { margin: 0; padding: 0; }
 #sub-nav .menu > li > a {
     display: inline-block;
-    text-indent: -9999px;
     overflow: hidden;
     background-repeat: no-repeat;
 }
@@ -274,7 +273,7 @@ body {
     background-repeat: repeat-y;
 }
 #header {
-    height: 110px;
+    height: 85px;
     width: 795px;
     background-image: url(graphics/slices/r3_c2.png);
     background-repeat: repeat-y;
@@ -287,6 +286,15 @@ body {
     padding: 20px;
     width: 90%;
     margin: 0px;
+}
+#main h1 {
+    margin-left: 23px;
+}
+.page-id-2 #main {
+    width: 92% !important;
+}
+.page-id-2 .Accordion {
+    width: 380px;
 }
 #main_home {
     width: 95%;
@@ -316,11 +324,11 @@ body {
     margin-top: 10px;
 }
 #content_pages {
-    float: left;
+   /* float: left;
     margin-left: 31px;
     margin-top: 0px;
     margin-right: 75px;
-    width: 710px;
+    width: 710px;*/
 }
 h2 {
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -382,6 +390,9 @@ h5 {
       padding-bottom: 5px;
       padding-left: 15px;
   }
+.AccordionPanelContent p {
+    padding: 1em;
+}
 #footer p a {
     color: #FEEED5;
     text-decoration: underline;
@@ -569,6 +580,156 @@ a:hover {
     width: 90%;
     margin: 0 auto 0 0.6rem;
 }
+
+/* Subnav container: you can keep your existing #sub_nav wrappers */
+#sub_nav { background: #402709; padding: 1.618em 0; }
+#sub-nav.sub-nav, #sub_nav .sub-nav { max-width: 795px; margin: 0 auto; padding: 8px 0; }
+#sub-nav .sub-menu, #sub_nav .sub-menu { list-style:none; margin:0; padding:0; display:flex; justify-content: center; flex-wrap:wrap; gap:8px; }
+#sub-nav .sub-menu > li, #sub_nav .sub-menu > li { flex: 0 0 auto; }
+
+/* Exact tile size */
+.subnav-card-link { display:block; width:147px; }
+.subnav-card { position:relative; display:block; width:147px; height:157px; background:#2d2d2d; overflow:hidden; }
+.subnav-card__image { position:absolute; inset:0; background-image:var(--bg); background-size:cover; background-position:center; background-repeat:no-repeat; }
+.subnav-card__overlay { position:absolute; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); color:#fff; padding:8px 10px; }
+.subnav-card__label { display:flex; align-items:center; font-weight:600; line-height:1.2; font-size:14px; height: 33px; }
+
+/* Optional hover state for clarity */
+.subnav-card-link:hover .subnav-card__overlay { background:rgba(0,0,0,0.6); }
+
+/* Responsive: allow wrapping, and optionally scale tiles on very small screens */
+@media (max-width: 420px) {
+    .subnav-card-link, .subnav-card { width:45vw; height:48vw; }
+}
+
+
+/* Container */
+#sub_nav { background:#402709; }
+.sub-nav { max-width:795px; margin:0 auto; padding:8px 0; }
+
+/* Grid: exactly 6 columns on desktop, then step down on breakpoints */
+.sub-nav .sub-menu {
+    list-style:none; margin:0; padding:0;
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:8px;
+}
+
+#menu-sub-navigation span {
+    text-align: center;
+    justify-content: center;
+}
+
+.text_main.learn-more-cta h4 {
+    line-height: 1.5;
+}
+
+/* If you’re using the image-tile markup from earlier, these classes exist. */
+.subnav-card-link { display:block; width:100%; }
+.subnav-card { position:relative; display:block; width:100%; aspect-ratio:147/157; background:#2d2d2d; overflow:hidden; }
+.subnav-card__image { position:absolute; inset:0; background-image:var(--bg); background-size:cover; background-position:center; }
+.subnav-card__overlay { position:absolute; left:0; right:0; bottom:16px; background:rgba(0,0,0,.5); color:#fff; padding:8px 10px; font-weight:600; }
+
+/* Mailchimp Newsletter Footer Styles */
+.footer-newsletter {
+    background-color: #FFEED5;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    margin: 6rem 0 0 -0.8rem;
+    width: 91%;
+}
+
+.newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-newsletter h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.footer-newsletter p {
+    margin: 0 0 20px;
+    color: #666;
+}
+
+#mc_embed_signup form {
+    padding: 0;
+}
+
+#mc_embed_signup .mc-field-group {
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+    margin-right: 10px;
+}
+
+#mc_embed_signup input.email {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#mc_embed_signup .button {
+    background-color: #0073aa;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#mc_embed_signup .button:hover {
+    background-color: #005177;
+}
+
+#mc_embed_signup .response {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#primary,
+#secondary {
+    width: 45rem;
+    margin: 0 auto;
+}
+#block-2 .wp-block-search__button-outside.wp-block-search__text-button.wp-block-search {
+    width: 60%;
+}
+
+.error404 #main {
+    width: 80%;
+    margin: 0 auto;
+}
+.error-404 .page-header h1.page-title {
+    margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .footer-newsletter {
+        padding: 30px 15px;
+    }
+
+    #mc_embed_signup .mc-field-group {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Breakpoints: reduce columns for smaller screens */
+@media (max-width: 1000px) { .sub-nav .sub-menu { grid-template-columns: repeat(5, 1fr); } }
+@media (max-width: 840px)  { .sub-nav .sub-menu { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 680px)  { .sub-nav .sub-menu { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 520px)  { .sub-nav .sub-menu { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 360px)  { .sub-nav .sub-menu { grid-template-columns: 1fr; } }
 
 
 
