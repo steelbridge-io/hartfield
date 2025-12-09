@@ -163,6 +163,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 New CSS
  */
 
+a {
+    text-decoration: none;
+}
+
 /* Containers for WordPress menus in header */
 #primary-nav .menu,
 #sub-nav .menu {
@@ -184,10 +188,12 @@ New CSS
 }
 #primary-nav .menu > li { margin: 0; padding: 0; }
 #primary-nav .menu > li > a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-indent: -9999px; /* hide text; keep accessible name via nav label */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 211px;
+    height: 50px;
+    /*text-indent: -9999px;*/
     overflow: hidden;
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -199,17 +205,49 @@ New CSS
 #primary-nav .nav-contact { grid-column: 2; grid-row: 2; }
 
 /* Primary header images (no explicit width/height needed due to grid sizing) */
-#primary-nav .nav-home > a { background-image: url('graphics/slices/home.png'); }
-#primary-nav .nav-home > a:hover { background-image: url('graphics/slices/home_f2.png'); }
+#primary-nav .nav-home > a {
+    /*background-image: url('graphics/slices/home.png');*/
+    background-color: #f5f5f5;
+    color: #000;
+}
+#primary-nav .nav-home > a:hover {
+    /*background-image: url('graphics/slices/home_f2.png');*/
+    background-color: #f5f5f5;
+    color: #000;
+}
 
-#primary-nav .nav-learn-more > a { background-image: url('graphics/slices/learn_more.png'); }
-#primary-nav .nav-learn-more > a:hover { background-image: url('graphics/slices/learn_more_f2.png'); }
+#primary-nav .nav-learn-more > a {
+    /*background-image: url('graphics/slices/learn_more.png');*/
+    background-color: #f5f5f5;
+    color: #000;
+}
+#primary-nav .nav-learn-more > a:hover {
+    /*background-image: url('graphics/slices/learn_more_f2.png');*/
+    background-color: #f5f5f5;
+    color: #000;
+}
 
-#primary-nav .nav-about-us > a { background-image: url('graphics/slices/about_us.png'); }
-#primary-nav .nav-about-us > a:hover { background-image: url('graphics/slices/about_us_f2.png'); }
+#primary-nav .nav-about-us > a {
+    /*background-image: url('graphics/slices/about_us.png');*/
+    background-color: #f5f5f5;
+    color: #000;
+}
+#primary-nav .nav-about-us > a:hover {
+    /*background-image: url('graphics/slices/about_us_f2.png');*/
+    background-color: #f5f5f5;
+    color: #000;
+}
 
-#primary-nav .nav-contact > a { background-image: url('graphics/slices/contact.png'); }
-#primary-nav .nav-contact > a:hover { background-image: url('graphics/slices/contact_f2.png'); }
+#primary-nav .nav-contact > a {
+    /*background-image: url('graphics/slices/contact.png');*/
+    background-color: #f5f5f5;
+    color: #000;
+}
+#primary-nav .nav-contact > a:hover {
+    /*background-image: url('graphics/slices/contact_f2.png');*/
+    background-color: #f5f5f5;
+    color: #000;
+}
 
 /* Sub navigation strip (tile buttons) */
 #sub-nav .menu {
@@ -224,8 +262,13 @@ New CSS
 }
 
 /* Exact pixel sizes for tiles to match legacy */
-#sub-nav .nav-retirement-planning > a { width:145px; height:138px; background-image:url('graphics/slices/retirement_planning.png'); }
-#sub-nav .nav-retirement-planning > a:hover { background-image:url('graphics/slices/retirement_planning_f2.png'); }
+#sub-nav .nav-retirement-planning > a { width:145px; height:138px; /*background-image:url('graphics/slices/retirement_planning.png');*/
+    background-color: #f5f5f5;
+}
+#sub-nav .nav-retirement-planning > a:hover {
+    /*background-image:url('graphics/slices/retirement_planning_f2.png');*/
+    background-color: #f5f5f5;
+}
 
 #sub-nav .nav-529-plans > a { width:139px; height:138px; background-image:url('graphics/slices/529_plans.png'); }
 #sub-nav .nav-529-plans > a:hover { background-image:url('graphics/slices/529_plans_f2.png'); }
@@ -248,7 +291,8 @@ New CSS
 
 
 body {
-    background-color: #462700;
+    /*background-color: #462700;*/
+    background-color: #f5f5f5;
     padding: 0;
     margin: 0;
 }
@@ -265,7 +309,8 @@ a[href $='.zip'] {
     width: 850px;
     margin-right: auto;
     margin-left: auto;
-    background-image: url(graphics/slices/background_main.png);
+    /*background-image: url(graphics/slices/background_main.png);*/
+    background-image: url(graphics/slices/background_main_new.png);
     background-repeat: repeat-y;
 }
 #header {
@@ -296,7 +341,7 @@ a[href $='.zip'] {
     width: 95%;
     margin: 0px;
     /*background-image: url(graphics/slices/background_home.png);*/
-    background-image: url(graphics/slices/test_background_home.png);
+    background-image: url(graphics/slices/Tom-Headshot-circle-2025.png);
     height: 480px;
     background-repeat: no-repeat;
     padding-top: 0px;
@@ -375,7 +420,7 @@ h5 {
     margin-left: auto;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 10px;
-    color: #FEEED5;
+    color: #000;
     padding-top: 3px;
     text-align: center;
 }
@@ -391,7 +436,7 @@ h5 {
     padding: 1em;
 }
 #footer p a {
-    color: #FEEED5;
+    color: #fa7828;
     text-decoration: underline;
 }
 #footer p a:hover {
@@ -524,7 +569,6 @@ h5 {
 }
 a:link , a:visited{
     color: #4E2600;
-    text-decoration: underline;
 }
 .info_column {
     margin: 5px;
@@ -592,7 +636,9 @@ a:hover {
 .subnav-card__label { display:flex; align-items:center; font-weight:600; line-height:1.2; font-size:14px; height: 33px; }
 
 /* Optional hover state for clarity */
-.subnav-card-link:hover .subnav-card__overlay { background:rgba(0,0,0,0.6); }
+.subnav-card-link:hover .subnav-card__overlay {
+    /*background:rgba(0,0,0,0.6);*/
+}
 
 /* Responsive: allow wrapping, and optionally scale tiles on very small screens */
 @media (max-width: 420px) {
@@ -601,7 +647,8 @@ a:hover {
 
 
 /* Container */
-#sub_nav { background:#402709; }
+/*#sub_nav { background:#402709; }*/
+#sub_nav { background:#828cb4; }
 .sub-nav { max-width:795px; margin:0 auto; padding:8px 0; }
 
 /* Grid: exactly 6 columns on desktop, then step down on breakpoints */
@@ -625,16 +672,18 @@ a:hover {
 .subnav-card-link { display:block; width:100%; }
 .subnav-card { position:relative; display:block; width:100%; aspect-ratio:147/157; background:#2d2d2d; overflow:hidden; }
 .subnav-card__image { position:absolute; inset:0; background-image:var(--bg); background-size:cover; background-position:center; }
-.subnav-card__overlay { position:absolute; left:0; right:0; bottom:16px; background:rgba(0,0,0,.5); color:#fff; padding:8px 10px; font-weight:600; }
+.subnav-card__overlay {
+    position:absolute; left:0; right:0; bottom:16px; background:rgba(255,255,255,1.0); color:#000; padding:8px 10px; font-weight:600;
+}
 
 /* Mailchimp Newsletter Footer Styles */
 .footer-newsletter {
-    background-color: #FFEED5;
+    background-color: #bec8dc;
     padding: 40px 20px;
     text-align: center;
-    border-top: 1px solid #e0e0e0;
-    margin: 6rem 0 0 -0.8rem;
-    width: 91%;
+    border-top: 1px solid #646e96;
+    margin: 6rem 0 0 -2rem;
+    width: 95.6%;
 }
 
 .newsletter-content {
