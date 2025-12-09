@@ -14,11 +14,11 @@
 <body <?php body_class(); ?>>
 <div id="container">
     <div id="header">
-        <table align="left" bgcolor="#402709" border="0" cellpadding="0" cellspacing="0" width="795">
+        <table align="left" bgcolor="#828cb4" border="0" cellpadding="0" cellspacing="0" width="795">
             <tr>
                 <td>
                     <a href="<?php echo esc_url(home_url('/')); ?>">
-                        <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/graphics/slices/logo.png'); ?>" alt="" width="328" height="101" />
+                        <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/graphics/slices/logo_new.png'); ?>" alt="" width="328" height="101" />
                     </a>
                 </td>
                 <td>
