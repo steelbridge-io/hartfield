@@ -118,14 +118,16 @@
  */
 .AccordionPanelTabHover {
 	color: #000;
-	background-image: url(../graphics/slices/background_spry_over.png);
-	background-repeat: repeat-x;
+	/*background-image: url(../graphics/slices/background_spry_over.png);*/
+	background-color: #646e96;
+	/*background-repeat: repeat-x;*/
 	text-decoration: underline;
 }
 .AccordionPanelOpen .AccordionPanelTabHover {
 	color: #000;
-	background-image: url(../graphics/slices/background_spry_over.png);
-	background-repeat: repeat-x;
+	/*background-image: url(../graphics/slices/background_spry_over.png);*/
+	background-color: #646e96;
+	/*background-repeat: repeat-x;*/
 }
 
 /* This is an example of how to change the appearance of all the panel tabs when the
@@ -133,12 +135,12 @@
  * whenever the Accordion gains or loses keyboard focus.
  */
 .AccordionFocused .AccordionPanelTab {
-	background-color: #FEEED5;
+	background-color: #646e96;
 }
 
 /* This is an example of how to change the appearance of the panel tab that is
  * currently open when the Accordion has focus.
  */
 .AccordionFocused .AccordionPanelOpen .AccordionPanelTab {
-	background-color: #FEEED5;
+	background-color: #646e96;
 }
