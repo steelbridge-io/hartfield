@@ -146,6 +146,7 @@ add_action( 'widgets_init', 'hartfield_financial_widgets_init' );
  */
 function hartfield_financial_scripts() {
   wp_enqueue_style( 'hartfield-financial-style', get_stylesheet_uri(), array(), _S_VERSION );
+  wp_enqueue_style('wp-css', get_template_directory_uri() . '/wordpress.css', array(), _S_VERSION);
   wp_style_add_data( 'hartfield-financial-style', 'rtl', 'replace' );
   wp_enqueue_style('spry-accordion-css', get_stylesheet_directory_uri() . '/SpryAssets/SpryAccordion.css', array(), _S_VERSION);
   wp_enqueue_style('spry-accordion-home-css', get_stylesheet_directory_uri() . '/SpryAssets/SpryAccordion-home.css', array(), _S_VERSION);
