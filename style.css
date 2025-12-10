@@ -166,6 +166,9 @@ New CSS
 a {
     text-decoration: none;
 }
+p, li {
+    font-size: 14px;
+}
 
 /* Containers for WordPress menus in header */
 #primary-nav .menu,
@@ -193,10 +196,11 @@ a {
     justify-content: center;
     width: 211px;
     height: 50px;
-    /*text-indent: -9999px;*/
     overflow: hidden;
     background-repeat: no-repeat;
     background-position: 0 0;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 #primary-nav .nav-home { grid-column: 1; grid-row: 1; }
@@ -207,46 +211,46 @@ a {
 /* Primary header images (no explicit width/height needed due to grid sizing) */
 #primary-nav .nav-home > a {
     /*background-image: url('graphics/slices/home.png');*/
-    background-color: #f5f5f5;
-    color: #000;
+    background-color: #F67923;
+    color: #f5f5f5;
 }
 #primary-nav .nav-home > a:hover {
     /*background-image: url('graphics/slices/home_f2.png');*/
-    background-color: #f5f5f5;
-    color: #000;
+    background-color: #F67923;
+    color: #f5f5f5;
 }
 
 #primary-nav .nav-learn-more > a {
     /*background-image: url('graphics/slices/learn_more.png');*/
-    background-color: #f5f5f5;
-    color: #000;
+    background-color: #F67923;
+    color: #f5f5f5;
 }
 #primary-nav .nav-learn-more > a:hover {
     /*background-image: url('graphics/slices/learn_more_f2.png');*/
-    background-color: #f5f5f5;
-    color: #000;
+    background-color: #F67923;
+    color: #f5f5f5;
 }
 
 #primary-nav .nav-about-us > a {
     /*background-image: url('graphics/slices/about_us.png');*/
-    background-color: #f5f5f5;
-    color: #000;
+    background-color: #F67923;
+    color: #f5f5f5;
 }
 #primary-nav .nav-about-us > a:hover {
     /*background-image: url('graphics/slices/about_us_f2.png');*/
-    background-color: #f5f5f5;
-    color: #000;
+    background-color: #F67923;
+    color: #f5f5f5;
 }
 
 #primary-nav .nav-contact > a {
     /*background-image: url('graphics/slices/contact.png');*/
-    background-color: #f5f5f5;
-    color: #000;
+    background-color: #F67923;
+    color: #f5f5f5;
 }
 #primary-nav .nav-contact > a:hover {
     /*background-image: url('graphics/slices/contact_f2.png');*/
-    background-color: #f5f5f5;
-    color: #000;
+    background-color: #F67923;
+    color: #f5f5f5;
 }
 
 /* Sub navigation strip (tile buttons) */
@@ -263,11 +267,11 @@ a {
 
 /* Exact pixel sizes for tiles to match legacy */
 #sub-nav .nav-retirement-planning > a { width:145px; height:138px; /*background-image:url('graphics/slices/retirement_planning.png');*/
-    background-color: #f5f5f5;
+    background-color: #F67923;
 }
 #sub-nav .nav-retirement-planning > a:hover {
     /*background-image:url('graphics/slices/retirement_planning_f2.png');*/
-    background-color: #f5f5f5;
+    background-color: #F67923;
 }
 
 #sub-nav .nav-529-plans > a { width:139px; height:138px; background-image:url('graphics/slices/529_plans.png'); }
@@ -342,12 +346,26 @@ a[href $='.zip'] {
     margin: 0px;
     /*background-image: url(graphics/slices/background_home.png);*/
     background-image: url(graphics/slices/Tom-Headshot-circle-2025.png);
-    height: 480px;
+    height: 665px;
     background-repeat: no-repeat;
     padding-top: 0px;
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
+}
+#main_home::after {
+    content: "Thomas Hartfield \A 805.522.5815";
+    white-space: pre;
+    display: table;
+    clear: both;
+    width: 205px;
+    text-align: center;
+    padding-top: 28px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    bottom: 172px;
+    right: -557px;
 }
 #services {
     width: 233px;
@@ -356,8 +374,8 @@ a[href $='.zip'] {
 }
 .text_form {
     font-family: Tahoma, Geneva, sans-serif;
-    font-size: 10px;
-    text-align: center;
+    font-size: 14px;
+    text-align: left;
 }
 #content {
     width: 320px;
@@ -374,21 +392,21 @@ a[href $='.zip'] {
 }
 h2 {
     font-family: Georgia, "Times New Roman", Times, serif;
-    color: #00C;
+    color: #000;
     text-transform: capitalize;
     font-size: 16px;
 }
 h3 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 22px;
-    color: #4E2600;
+    color: #000;
     line-height: 30px;
 }
 h4 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 20px;
     font-weight: bold;
-    color: #4E2600;
+    color: #000;
     margin-top: 3px;
     margin-right: 0px;
     margin-bottom: 3px;
@@ -408,8 +426,8 @@ h5 {
 }
 .text_welcome {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    color: #4E2600;
+    font-size: 14px;
+    color: #000;
     line-height: 20px;
 }
 #footer {
@@ -440,7 +458,7 @@ h5 {
     text-decoration: underline;
 }
 #footer p a:hover {
-    color: #FEEED5;
+    color: #fa7828;
     text-decoration: none;
 }
 .AccordionPanelContent ul li {
@@ -488,7 +506,7 @@ h5 {
     font-size: 12px;
     color: #333;
     line-height: 18px;
-    border: 1px solid #EEE;
+    border: 1px solid #ccc;
     padding-left: 13px;
     padding-right: 13px;
 }
@@ -568,7 +586,7 @@ h5 {
     font-style: italic;
 }
 a:link , a:visited{
-    color: #4E2600;
+    color: #646e96;
 }
 .info_column {
     margin: 5px;
@@ -580,7 +598,7 @@ a:link , a:visited{
     border-right-color: #D3C5B0;
 }
 a:hover {
-    color: #773A00;
+    color: #000;
     text-decoration: none;
 }
 .info_column_FAQ {
@@ -673,7 +691,15 @@ a:hover {
 .subnav-card { position:relative; display:block; width:100%; aspect-ratio:147/157; background:#2d2d2d; overflow:hidden; }
 .subnav-card__image { position:absolute; inset:0; background-image:var(--bg); background-size:cover; background-position:center; }
 .subnav-card__overlay {
-    position:absolute; left:0; right:0; bottom:16px; background:rgba(255,255,255,1.0); color:#000; padding:8px 10px; font-weight:600;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:16px;
+    /*background:rgba(255,255,255,1.0);*/
+    background-color: #F67923;
+    color:#f5f5f5;
+    padding:8px 10px;
+    font-weight:600;
 }
 
 /* Mailchimp Newsletter Footer Styles */
@@ -681,9 +707,12 @@ a:hover {
     background-color: #bec8dc;
     padding: 40px 20px;
     text-align: center;
-    border-top: 1px solid #646e96;
-    margin: 6rem 0 0 -2rem;
-    width: 95.6%;
+    border-top: 15px solid #828cb4;
+    border-left: 15px solid #828cb4;
+    border-right: 15px solid #828cb4;
+    border-bottom: 15px solid #828cb4;
+    margin: 0 0 0 -1.72rem;
+    width: 91.2%;
 }
 
 .newsletter-content {
@@ -695,10 +724,11 @@ a:hover {
     margin: 0 0 10px;
     font-size: 24px;
     color: #333;
+    line-height: .6;
 }
 
 .footer-newsletter p {
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     color: #666;
 }
 
@@ -723,7 +753,7 @@ a:hover {
 }
 
 #mc_embed_signup .button {
-    background-color: #0073aa;
+    background-color: #F67923;
     color: #fff;
     padding: 12px 30px;
     font-size: 16px;
@@ -734,7 +764,7 @@ a:hover {
 }
 
 #mc_embed_signup .button:hover {
-    background-color: #005177;
+    background-color: #F67923;
 }
 
 #mc_embed_signup .response {
@@ -757,6 +787,17 @@ a:hover {
 }
 .error-404 .page-header h1.page-title {
     margin: 0 !important;
+}
+
+#gform_submit_button_1.gform_button.button {
+    background-color: #F67923;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 @media (max-width: 768px) {

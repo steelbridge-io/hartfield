@@ -145,7 +145,7 @@ add_action( 'widgets_init', 'hartfield_financial_widgets_init' );
  * Enqueue scripts and styles.
  */
 function hartfield_financial_scripts() {
-	wp_enqueue_style( 'hartfield-financial-style', get_stylesheet_uri(), array(), _S_VERSION );
+  wp_enqueue_style( 'hartfield-financial-style', get_stylesheet_uri(), array(), _S_VERSION );
   wp_style_add_data( 'hartfield-financial-style', 'rtl', 'replace' );
   wp_enqueue_style('spry-accordion-css', get_stylesheet_directory_uri() . '/SpryAssets/SpryAccordion.css', array(), _S_VERSION);
   wp_enqueue_style('spry-accordion-home-css', get_stylesheet_directory_uri() . '/SpryAssets/SpryAccordion-home.css', array(), _S_VERSION);
@@ -153,7 +153,7 @@ function hartfield_financial_scripts() {
   wp_enqueue_style('spry-validation-textField-css', get_stylesheet_directory_uri() . '/SpryAssets/SpryValidationTextField.css', array(), _S_VERSION);
 
 
-	wp_enqueue_script( 'hartfield-financial-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+  wp_enqueue_script( 'hartfield-financial-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
   wp_enqueue_script('spry-accordion-js', get_template_directory_uri() . '/SpryAssets/SpryAccordion.js', array(), _S_VERSION, false);
   wp_enqueue_script('spry-accordion-home-js', get_template_directory_uri() . '/SpryAssets/SpryAccordion-home.js', array(), _S_VERSION, false);
   wp_enqueue_script('spry-tabs-js', get_template_directory_uri() . '/SpryAssets/SpryTabbedPanels.js', array(), _S_VERSION, false);
@@ -164,8 +164,6 @@ function hartfield_financial_scripts() {
  if ( is_page( 9 ) ) {
   wp_enqueue_script('about-us-js', get_template_directory_uri() . '/js/about_us.js', array(), _S_VERSION, true);
  }
-
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
