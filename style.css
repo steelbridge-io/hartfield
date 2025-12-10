@@ -346,7 +346,7 @@ a[href $='.zip'] {
     margin: 0px;
     /*background-image: url(graphics/slices/background_home.png);*/
     background-image: url(graphics/slices/Tom-Headshot-circle-2025.png);
-    height: 665px;
+    height: 591px;
     background-repeat: no-repeat;
     padding-top: 0px;
     padding-right: 20px;
@@ -364,7 +364,7 @@ a[href $='.zip'] {
     font-size: 20px;
     font-weight: bold;
     position: relative;
-    bottom: 172px;
+    bottom: 85px;
     right: -557px;
 }
 #services {
@@ -378,7 +378,7 @@ a[href $='.zip'] {
     text-align: left;
 }
 #content {
-    width: 320px;
+    width: 491px;
     float: left;
     margin-left: 30px;
     margin-top: 10px;
@@ -809,6 +809,11 @@ a:hover {
         margin-right: 0;
         margin-bottom: 10px;
     }
+
+    .footer-newsletter {
+        width: 735px;
+    }
+
 }
 
 /* Breakpoints: reduce columns for smaller screens */

@@ -1,0 +1,32 @@
+/* Left alignment */
+.alignleft {
+    float: left;
+    margin: 0.5em 1em 0.5em 0;
+}
+
+/* Right alignment */
+.alignright {
+    float: right;
+    margin: 0.5em 0 0.5em 1em;
+}
+
+/* Center alignment */
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+/* No alignment (default) */
+.alignnone {
+    margin: 0.5em 1.5em 0.5em 0;
+}
+
+h2.entry-title {
+    font-size: 25px;
+
+}
+h2.entry-title a {
+    color: #000;
+}
