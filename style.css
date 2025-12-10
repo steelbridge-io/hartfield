@@ -659,9 +659,9 @@ a:hover {
 }
 
 /* Responsive: allow wrapping, and optionally scale tiles on very small screens */
-@media (max-width: 420px) {
+/*@media (max-width: 420px) {
     .subnav-card-link, .subnav-card { width:45vw; height:48vw; }
-}
+}*/
 
 
 /* Container */
@@ -712,7 +712,7 @@ a:hover {
     border-right: 15px solid #828cb4;
     border-bottom: 15px solid #828cb4;
     margin: 0 0 0 -1.72rem;
-    width: 91.2%;
+    width: 725px;
 }
 
 .newsletter-content {
@@ -817,7 +817,3 @@ a:hover {
 @media (max-width: 680px)  { .sub-nav .sub-menu { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 520px)  { .sub-nav .sub-menu { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 360px)  { .sub-nav .sub-menu { grid-template-columns: 1fr; } }
-
-
-
-

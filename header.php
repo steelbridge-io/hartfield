@@ -12,6 +12,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
 <div id="container">
     <div id="header">
         <table align="left" bgcolor="#828cb4" border="0" cellpadding="0" cellspacing="0" width="795">
