@@ -5,8 +5,25 @@ get_header();
 
  <div id="main_home">
   <div id="services">
-   <h4>Our services</h4>
+   <h4><?php echo esc_html( get_option('hf_services_heading', 'Our services') ); ?></h4>
    <div id="Accordion1" class="Accordion" tabindex="0">
+    <?php
+    $hf_panels = get_option('hf_services_panels');
+    if (is_array($hf_panels) && !empty($hf_panels)):
+        foreach ($hf_panels as $panel):
+            $title = isset($panel['title']) ? $panel['title'] : '';
+            $content = isset($panel['content']) ? $panel['content'] : '';
+            ?>
+            <div class="AccordionPanel">
+                <div class="AccordionPanelTab"><?php echo esc_html($title); ?></div>
+                <div class="AccordionPanelContent">
+                    <?php echo wp_kses_post($content); ?>
+                </div>
+            </div>
+            <?php
+        endforeach;
+    else:
+    ?>
     <div class="AccordionPanel">
      <div class="AccordionPanelTab">Tax Strategies</div>
      <div class="AccordionPanelContent">
@@ -126,18 +143,18 @@ get_header();
       </ul>
      </div>
     </div>
-   </div>
+    <?php endif; ?>
+  </div>
   </div>
   <div id="content">
-   <h4>Welcome</h4>
-   <p class="text_welcome">Hartfield Financial &amp; Insurance Services, Inc., (HFIS Advisors), a Leader in Investment Management and Insurance Planning, is dedicated to helping clients achieve their long-term financial goals utilizing balanced and diversified investment and risk management planning strategies.
-   </p>
-   <p class="text_welcome">As a Fiduciary and Registered Investment Advisor, we specialize in asset allocation and custom portfolio design while offering unparalleled service and support.     </p>
+   <h4><?php echo esc_html( get_option('hf_welcome_heading', 'Welcome') ); ?></h4>
+   <p class="text_welcome"><?php echo esc_html( get_option('hf_welcome_p1', 'Hartfield Financial & Insurance Services, Inc., (HFIS Advisors), a Leader in Investment Management and Insurance Planning, is dedicated to helping clients achieve their long-term financial goals utilizing balanced and diversified investment and risk management planning strategies.') ); ?></p>
+   <p class="text_welcome"><?php echo esc_html( get_option('hf_welcome_p2', 'As a Fiduciary and Registered Investment Advisor, we specialize in asset allocation and custom portfolio design while offering unparalleled service and support.') ); ?></p>
   </div>
   <div id="leads_form">
-      <h4>More Information</h4>
-      <p class="text_form">If you would like Thomas to contact you regarding your specific situation, please fill out this form:</p>
-      <?php echo do_shortcode('[gravityform id="1" title="false"]'); ?>
+      <h4><?php echo esc_html( get_option('hf_leads_heading', 'More Information') ); ?></h4>
+      <p class="text_form"><?php echo esc_html( get_option('hf_leads_text', 'If you would like Thomas to contact you regarding your specific situation, please fill out this form:') ); ?></p>
+      <?php echo do_shortcode( get_option('hf_leads_shortcode', '[gravityform id="1" title="false"]') ); ?>
 
    <!--<form id="form1" name="form1" method="post" action="">
 

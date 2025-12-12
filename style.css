@@ -163,11 +163,39 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 New CSS
  */
 
+/* Header contact area (right of logo) */
+.header-contact {
+    color: #fff;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+#header-contact-container a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 42px;
+}
+#header-contact-container a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
 a {
     text-decoration: none;
 }
 p, li {
     font-size: 14px;
+}
+
+.w50-percent {
+    width: 50%;
+}
+
+.brand-logo img {
+    width: 100%;
+    height: auto;
 }
 
 /* Containers for WordPress menus in header */
@@ -178,81 +206,45 @@ p, li {
     padding: 0;
 }
 
-/* Primary header menu uses a 2×2 grid to match legacy layout
-   Left column: 218px  (Home 56px tall, Learn More 45px tall)
-   Right column: 224px (About Us 56px tall, Contact 45px tall) */
-#primary-nav .menu {
-    display: grid;
-    grid-template-columns: 218px 224px;
-    grid-template-rows: 56px 45px;
-    gap: 0;
-    align-items: stretch;
-    justify-items: stretch;
+/* Primary navigation row: horizontal up to 6 items, centered if fewer */
+#primary-nav.primary-row {
+    width: 795px;
+    background: #828cb4;
 }
-#primary-nav .menu > li { margin: 0; padding: 0; }
-#primary-nav .menu > li > a {
+#primary-nav.primary-row .menu {
     display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 21px;
+    padding: 8px 10px;
+    flex-wrap: nowrap;
+}
+#primary-nav.primary-row .menu > li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex: 0 1 auto;
+}
+#primary-nav.primary-row .menu > li > a {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 211px;
+    padding: 10px 16px;
+    min-width: 100px;
+    max-width: 140px;
     height: 50px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: 0 0;
+    background-color: #F67923;
+    color: #f5f5f5;
     font-weight: 600;
     font-size: 14px;
+    text-align: center;
 }
+#primary-nav.primary-row .menu > li > a:hover { background-color: #F67923; color: #fff; }
 
-#primary-nav .nav-home { grid-column: 1; grid-row: 1; }
-#primary-nav .nav-learn-more { grid-column: 1; grid-row: 2; }
-#primary-nav .nav-about-us { grid-column: 2; grid-row: 1; }
-#primary-nav .nav-contact { grid-column: 2; grid-row: 2; }
-
-/* Primary header images (no explicit width/height needed due to grid sizing) */
-#primary-nav .nav-home > a {
-    /*background-image: url('graphics/slices/home.png');*/
-    background-color: #F67923;
-    color: #f5f5f5;
+/* On small screens, allow wrapping */
+@media (max-width: 820px) {
+    #primary-nav.primary-row .menu { flex-wrap: wrap; }
 }
-#primary-nav .nav-home > a:hover {
-    /*background-image: url('graphics/slices/home_f2.png');*/
-    background-color: #F67923;
-    color: #f5f5f5;
-}
-
-#primary-nav .nav-learn-more > a {
-    /*background-image: url('graphics/slices/learn_more.png');*/
-    background-color: #F67923;
-    color: #f5f5f5;
-}
-#primary-nav .nav-learn-more > a:hover {
-    /*background-image: url('graphics/slices/learn_more_f2.png');*/
-    background-color: #F67923;
-    color: #f5f5f5;
-}
-
-#primary-nav .nav-about-us > a {
-    /*background-image: url('graphics/slices/about_us.png');*/
-    background-color: #F67923;
-    color: #f5f5f5;
-}
-#primary-nav .nav-about-us > a:hover {
-    /*background-image: url('graphics/slices/about_us_f2.png');*/
-    background-color: #F67923;
-    color: #f5f5f5;
-}
-
-#primary-nav .nav-contact > a {
-    /*background-image: url('graphics/slices/contact.png');*/
-    background-color: #F67923;
-    color: #f5f5f5;
-}
-#primary-nav .nav-contact > a:hover {
-    /*background-image: url('graphics/slices/contact_f2.png');*/
-    background-color: #F67923;
-    color: #f5f5f5;
-}
-
 /* Sub navigation strip (tile buttons) */
 #sub-nav .menu {
     display: flex; /* lay out tiles left-to-right inside the table cell */
@@ -415,7 +407,7 @@ h4 {
     padding-top: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
-    padding-left: 5px;
+    padding-left: 0px;
 }
 h5 {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -641,7 +633,10 @@ a:hover {
 }
 
 /* Subnav container: you can keep your existing #sub_nav wrappers */
-#sub_nav { background: #402709; padding: 1.618em 0; }
+#sub_nav {
+    background: #402709;
+    padding: 0 0 1.618em 0;
+}
 #sub-nav.sub-nav, #sub_nav .sub-nav { max-width: 795px; margin: 0 auto; padding: 8px 0; }
 #sub-nav .sub-menu, #sub_nav .sub-menu { list-style:none; margin:0; padding:0; display:flex; justify-content: center; flex-wrap:wrap; gap:8px; }
 #sub-nav .sub-menu > li, #sub_nav .sub-menu > li { flex: 0 0 auto; }
@@ -799,6 +794,17 @@ a:hover {
     cursor: pointer;
     margin-top: 10px;
 }
+
+.newsletter-content p {
+    color: #000;
+}
+
+.archive #primary {
+    width: 42rem;
+    margin: 0 7em 0 auto;
+}
+
+/* Media Queries */
 
 @media (max-width: 768px) {
     .footer-newsletter {

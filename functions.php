@@ -13,6 +13,11 @@ if ( ! defined( '_S_VERSION' ) ) {
 }
 
 /**
+ * Remove category title prefix
+ */
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+/**
  * Include the menu image file.
  */
 include_once get_template_directory() . '/inc/menu-image/menu-img.php';

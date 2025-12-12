@@ -17,31 +17,22 @@
     <div id="header">
         <table align="left" bgcolor="#828cb4" border="0" cellpadding="0" cellspacing="0" width="795">
             <tr>
-                <td class="w50-percent">
-                    <?php
-                    // Header logo and link from HF Manager options, with fallbacks
-                    $hf_logo_id   = (int) get_option('hf_header_logo_id', 0);
-                    $hf_logo_url  = $hf_logo_id ? wp_get_attachment_image_url($hf_logo_id, 'full') : '';
-                    $hf_link_url  = get_option('hf_header_logo_link_url', '');
-                    $logo_href    = !empty($hf_link_url) ? $hf_link_url : home_url('/');
-                    $logo_img_src = !empty($hf_logo_url)
-                        ? $hf_logo_url
-                        : (get_stylesheet_directory_uri() . '/graphics/slices/logo_new.png');
-                    ?>
-                    <a href="<?php echo esc_url($logo_href); ?>" class="brand-logo">
-                        <img src="<?php echo esc_url($logo_img_src); ?>" alt="" width="328" height="101" />
+                <td>
+                    <a href="<?php echo esc_url(home_url('/')); ?>">
+                        <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/graphics/slices/logo_new.png'); ?>" alt="" width="328" height="101" />
                     </a>
                 </td>
-                <td class="w50-percent">
-                    <div id="header-contact-container" class="header-contact" aria-label="Header contact">
-                        <?php
-                        // Output header contact area managed via HF Manager plugin
-                        $hf_header_contact = get_option('hf_header_contact_html', '');
-                        if (!empty($hf_header_contact)) {
-                            echo wp_kses_post($hf_header_contact);
-                        }
-                        ?>
-                    </div>
+                <td>
+                    <?php
+                    // Primary header menu as a 2×2 grid (Home, Learn More, About Us, Contact)
+                    wp_nav_menu([
+                            'theme_location' => 'primary',
+                            'container'      => 'nav',
+                            'container_id'   => 'primary-nav',
+                            'menu_class'     => 'menu primary-menu',
+                            'fallback_cb'    => false,
+                    ]);
+                    ?>
                 </td>
                 <td>
                     <!-- Keep this cell to maintain legacy header width structure; can be empty -->
@@ -52,18 +43,6 @@
             </tr>
         </table>
     </div>
-
-    <!-- Primary navigation row (below logo/header strip) -->
-    <nav id="primary-nav" class="primary-row" aria-label="Primary navigation">
-        <?php
-        wp_nav_menu([
-                'theme_location' => 'primary',
-                'container'      => false,
-                'menu_class'     => 'menu primary-menu',
-                'fallback_cb'    => false,
-        ]);
-        ?>
-    </nav>
 
     <div id="sub_nav">
         <nav id="sub-nav" class="sub-nav" aria-label="Sub navigation">
